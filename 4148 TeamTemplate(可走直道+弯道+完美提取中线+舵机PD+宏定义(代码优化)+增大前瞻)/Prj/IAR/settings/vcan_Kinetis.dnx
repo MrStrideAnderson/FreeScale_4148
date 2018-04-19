@@ -9,7 +9,7 @@
     </Jet>
     <PlDriver>
         <FirstRun>0</FirstRun>
-        <MemConfigValue>F:\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\NXP\MK60DN512Zxxx10.ddf</MemConfigValue>
+        <MemConfigValue>D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\NXP\MK60DN512Zxxx10.ddf</MemConfigValue>
     </PlDriver>
     <Stack>
         <FillEnabled>0</FillEnabled>

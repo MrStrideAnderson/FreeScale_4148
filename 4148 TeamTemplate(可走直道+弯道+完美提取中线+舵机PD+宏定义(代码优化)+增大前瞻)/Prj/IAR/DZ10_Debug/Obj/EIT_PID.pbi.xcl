@@ -1,4 +1,4 @@
-"D:\电子\飞思卡尔\FreeScale_4148\4148 TeamTemplate(可走直道+弯道+完美提取中线+舵机PD+宏定义(代码优化)+增大前瞻)\App\control.c"
+"D:\电子\飞思卡尔\FreeScale_4148\4148 TeamTemplate(可走直道+弯道+完美提取中线+舵机PD+宏定义(代码优化)+增大前瞻)\App\EIT_PID.c"
 -std=c11
 -ferror-limit=0
 -I

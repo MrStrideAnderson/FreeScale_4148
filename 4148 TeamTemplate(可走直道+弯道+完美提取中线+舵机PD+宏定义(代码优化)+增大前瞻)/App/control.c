@@ -2,20 +2,41 @@
 #include "include.h"
 
 double SteerKp=2.41, SteerKd=0.001;
+PID SteerPID;
+///*************************************************************************
+//*  函数名称：GoStraigt
+//*  功能说明：直走
+//*  参数说明：无
+//*  函数返回：无
+//*  修改时间：2018年4月17日
+//*  修改人  ：CLAY   
+//*************************************************************************/
+//void GoStraigt()
+//{
+//    ftm_pwm_duty(SD5_FTM, SD5_CH, STEER_MIDDLE);    
+//}
 
-/*************************************************************************
-*  函数名称：GoStraigt
-*  功能说明：直走
-*  参数说明：无
-*  函数返回：无
-*  修改时间：2018年4月17日
-*  修改人  ：CLAY   
-*************************************************************************/
-void GoStraigt()
+void SteerPID_Init()
 {
-    ftm_pwm_duty(SD5_FTM, SD5_CH, STEER_MIDDLE);    
+	SteerPID.Kp = 2.41;
+	SteerPID.Ki = 0;
+	SteerPID.Kd = 0;
+	
+	
+	SteerPID.MAX_Val = 880; //左右极限均按30°。 左880 中850 右826
+	SteerPID.MIN_Val = 826; //左右极限均按30°。 左880 中850 右826
+	
+	SteerPID.spVal   = 850 ;//打角目标值
+	
+	SteerPID.spUpRate = 200;   		//最大的上升速度
+    SteerPID.spDnRate = -200 ;		//最大的下降速度（应是个负数）
+	
+	
+	PID_InitFbVal(&SteerPID,0);
+	SteerPID.I = 0;
+    SteerPID.spValRamp=0;
+		
 }
-
 /*************************************************************************
 *  函数名称：Turn
 *  功能说明：左转
@@ -26,18 +47,11 @@ void GoStraigt()
 *************************************************************************/
 void Turn(int32 Angle)
 {
-    static int32 LastAngle=0;
-    int32 Bais;
-    
-    Bais = Angle - LastAngle;
-    Angle = (int32)(SteerKp*Angle + SteerKd*Bais);
-    
-    Angle += 850;
-    if(Angle>=880)Angle=880;
-    else if(Angle<=826) Angle=826;
-    ftm_pwm_duty(SD5_FTM, SD5_CH, Angle);//设置舵机打角 
-    
-    LastAngle = Angle;
+    PID_SetFbVal(&SteerPID,80 + Angle); //Angle在[-80,80]
+    PID_Run_PID(&SteerPID);
+
+    ftm_pwm_duty(SD5_FTM, SD5_CH, SteerPID.outVal);//设置舵机打角 
+
 }
 
 /*************************************************************************
@@ -58,14 +72,14 @@ void GetError()
     error31 = (Middle[40]+Middle[41]+Middle[42])/3;
     
     error = error51-error31;
-    if(error == 0)
-    {
-      GoStraigt();
-    }
-    else
-    {
+//    if(error == 0)
+//    {
+//      GoStraigt();
+//    }
+//    else
+//    {
       Turn(error);
-    } 
+//    } 
 }
 
 /*************************************************************************
@@ -79,6 +93,9 @@ void GetError()
 void SteerInit()//舵机初始化
 {
    ftm_pwm_init(SD5_FTM, SD5_CH,SD5_HZ,STEER_MIDDLE);//舵机信号PA12 //左右极限均按30°。 左880 中850 右826
+   
+
+   SteerPID_Init();
 }
 
 /*************************************************************************
@@ -93,3 +110,4 @@ void MotorInit()//电机初始化
 {
     ftm_pwm_init(MOTOR540_FTM, MOTOR540_CH,MOTOR540_HZ,40);//电机信号PA10 占空比10/1000
 }
+

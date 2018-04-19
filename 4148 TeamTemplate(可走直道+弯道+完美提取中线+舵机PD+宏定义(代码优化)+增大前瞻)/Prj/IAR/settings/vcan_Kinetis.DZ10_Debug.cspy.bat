@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"F:\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\31740\Desktop\桌面-飞卡整理集合\4148_Code\4148_poet\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.general.xcl" --backend -f "C:\Users\31740\Desktop\桌面-飞卡整理集合\4148_Code\4148_poet\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\电子\飞思卡尔\FreeScale_4148\4148 TeamTemplate(可走直道+弯道+完美提取中线+舵机PD+宏定义(代码优化)+增大前瞻)\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.general.xcl" --backend -f "D:\电子\飞思卡尔\FreeScale_4148\4148 TeamTemplate(可走直道+弯道+完美提取中线+舵机PD+宏定义(代码优化)+增大前瞻)\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"F:\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\31740\Desktop\桌面-飞卡整理集合\4148_Code\4148_poet\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\31740\Desktop\桌面-飞卡整理集合\4148_Code\4148_poet\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\电子\飞思卡尔\FreeScale_4148\4148 TeamTemplate(可走直道+弯道+完美提取中线+舵机PD+宏定义(代码优化)+增大前瞻)\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\电子\飞思卡尔\FreeScale_4148\4148 TeamTemplate(可走直道+弯道+完美提取中线+舵机PD+宏定义(代码优化)+增大前瞻)\Prj\IAR\settings\vcan_Kinetis.DZ10_Debug.driver.xcl" 
 
 @echo off 
 :end

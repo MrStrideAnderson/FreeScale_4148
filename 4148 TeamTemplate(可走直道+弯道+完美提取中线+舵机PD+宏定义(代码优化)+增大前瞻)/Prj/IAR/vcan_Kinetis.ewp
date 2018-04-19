@@ -6185,6 +6185,9 @@
             <name>$PROJ_DIR$\..\..\App\control.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\App\EIT_PID.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\App\handler.c</name>
         </file>
         <file>

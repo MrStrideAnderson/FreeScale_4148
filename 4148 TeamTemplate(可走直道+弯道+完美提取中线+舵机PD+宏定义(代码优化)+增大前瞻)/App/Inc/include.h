@@ -51,6 +51,7 @@
 #include "motor.h"
 #include "control.h"
 #include "main.h"
+#include "EIT_PID.h"
 
 
 #endif  //__INCLUDE_H__
