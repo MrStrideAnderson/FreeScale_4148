@@ -1,0 +1,17 @@
+"F:\IAR Systems\Embedded Workbench 8.0\arm\bin\armproc.dll" 
+
+"F:\IAR Systems\Embedded Workbench 8.0\arm\bin\armJET.dll" 
+
+"C:\Users\31740\Desktop\桌面-飞卡整理集合\4148_Code\4148_poet\Prj\IAR\DZ10_Debug\Exe\vcan_Kinetis.out" 
+
+--plugin "F:\IAR Systems\Embedded Workbench 8.0\arm\bin\armbat.dll" 
+
+--device_macro "F:\IAR Systems\Embedded Workbench 8.0\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro "F:\IAR Systems\Embedded Workbench 8.0\arm\config\debugger\NXP\Kxx_Trace.dmac" 
+
+--flash_loader "F:\IAR Systems\Embedded Workbench 8.0\arm\config\flashloader\NXP\FlashK60Dxxx128K.board" 
+
+
+
+
